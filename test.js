@@ -33,9 +33,9 @@ for (const key of Object.keys(user)) {
 
 //   #3
   const employees = {
-    Dina: 42,
-    Taras: 67,
-   Denis: 35,
+    dina: 42,
+    daras: 67,
+   denis: 35,
   };
 
   function findBestEmployee(employees) {
