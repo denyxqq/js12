@@ -4,27 +4,13 @@ const user = {
     hobby:"basketball",
     premium: true,
 }
-function changeMood(mood){
-    user.mood = "happy"
-    return user.mood;
-}
-changeMood(user.mood);
 
-function changeHobby(hobby){
-user.hobby = "skydiving"
-return user.hobby
-}
-changeHobby(user.hobby)
+const {mood, hobby, premium} = user;
+user.mood = "happy";
+user.hobby = "skydiving";
+user.premium = false;
+console.log(user);
 
-function changeSubscribtion(premium){
-user.premium = false
-return user.premium;
-}
-changeSubscribtion(user.premium)
-
-console.log(changeMood(user))
-console.log(changeHobby(user))
-console.log(changeSubscribtion(user))
 
 for (const key of Object.keys(user)) {
     console.log(`${key}: ${user[key]}`);
@@ -32,44 +18,48 @@ for (const key of Object.keys(user)) {
 
 
 //   #3
-  const employees = {
-    dina: 42,
-    daras: 67,
-   denis: 35,
-  };
+//   const employees = {
+//     dina: 42,
+//     taras: 67,
+//    denis: 35,
+//    dima:35,
+//    nastya:40,
+//   };
 
-  function findBestEmployee(employees) {
-    let bestWorker = "";
-    let maxTasks = 0;
-    for (const [name, tasks] of Object.entries(employees)) {
-      if (tasks > maxTasks) {
-        maxTasks = tasks;
-        bestWorker = name;
-      }
-    }
-    return bestWorker;
-  } 
-  console.log(findBestEmployee(employees)); 
+//   const {dina, taras, denis, dima, nastya} = employees;
 
+//   function findBestEmployee(employees) {
+//     let max = 0;
+//     let bestWorker = "" ;
+//     for(const key in employees){
+//         if(employees[key] > max){
+//             max = employees[key];
+//             bestWorker = key;
+//         }
+//     } 
+//     return(bestWorker);
+// }
+// console.log(findBestEmployee(employees));
   //    #4
 
 const income = {
-  Dina: 15000,
-  Taras: 20000,
- Denis: 15000,
- Dima:15000,
- Nastya:15000,
+  dina: 15000,
+  taras: 20000,
+ denis: 15000,
+ dima:15000,
+ nastya:15000,
 }
-const countTotalSalary = function (employees) {
-  const values = Object.values(employees);
-  let salary = 0;
-  for (const value of values) {
-    salary += value;
-  }
-  return salary;
-};
-console.log(countTotalSalary(income));
+const {dina, taras, denis, dima, nastya} = income;
 
+function countTotalSalary(employees) {
+  let maxIncome = 0;
+  for(const key in employees){
+      maxIncome += employees[key];
+  }
+  return(maxIncome);
+}
+
+console.log(countTotalSalary(income));
 
   // #6
 
@@ -105,7 +95,6 @@ console.log(countTotalSalary(income));
     }
     return `${productName}: ${total} грн`;
   };
-
 console.log(calculateTotalPrice(products, "клавіатура"));
 console.log(calculateTotalPrice(products, "мишка"));
 console.log(calculateTotalPrice(products, "коврик для миші"));
